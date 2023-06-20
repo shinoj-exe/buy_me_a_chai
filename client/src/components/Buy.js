@@ -14,15 +14,37 @@ const Buy = ({state}) => {
         console.log("Transaction complete");
     }
   return (
-    <div>
+    <>
+      <div className="container-md" style={{ width: "50%", marginTop: "25px" }}>
         <form onSubmit={buyChai}>
-            <label htmlFor="">Name</label>
-            <input type="text" id='name' placeholder='Enter your name' />
-            <label htmlFor="">Message</label>
-            <input type="text" id='message' placeholder='Enter your Message' />
-            <button type="submit">Pay</button>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Message</label>
+            <input
+              type="text"
+              className="form-control"
+              id="message"
+              placeholder="Enter Your Message"
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={!state.contract}
+          >
+            Pay
+          </button>
         </form>
-    </div>
+      </div>
+    </>
   )
 }
 
